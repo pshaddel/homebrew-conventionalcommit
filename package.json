@@ -1,0 +1,21 @@
+{
+  "name": "conventional-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.4.10",
+    "@types/prompts": "^2.0.14",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "prompts": "^2.4.1",
+    "yargs": "^17.0.1"
+  }
+}
