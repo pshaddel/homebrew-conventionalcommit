@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:dev": "tsc-watch --onSuccess 'node ./build/cli.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@types/node": "^16.4.10",
     "@types/prompts": "^2.0.14",
+    "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
