@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-   "cli": "./build/cli.js"
+   "conventionalcommit": "./build/cli.js"
   },
   "scripts": {
     "start:dev": "tsc-watch --onSuccess 'node ./build/cli.js'",
