@@ -5,6 +5,6 @@ class Conventionalcommit < Formula
     sha256 "6531354b956f1dc6bfff1959c0cea4fc1d5560021c6fb3190dde64c298202ad8"
     version "1.0.0"
     def install
-      bin.install "conventional-commit"
+      bin.install "conventionalcommit-node14-macos-x64"
     end
   end
