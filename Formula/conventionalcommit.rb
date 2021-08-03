@@ -5,6 +5,6 @@ class Conventionalcommit < Formula
     sha256 "86d8874a66de9220f9cc03379f65e7805c2d2fce76a1b9646ba492cfd4065d3f"
     version "1.0.0"
     def install
-      bin.install "conventionalcommit"
+      bin.install "conventional-commit"
     end
   end
