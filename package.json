@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+   "cli": "./build/cli.js"
+  },
   "scripts": {
     "start:dev": "tsc-watch --onSuccess 'node ./build/cli.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "pkg . --targets node14-macos-x64 --output conventional-commit-node14-macos-x64 && pkg . --targets node14-linux-x64 --output conventional-commit-node14-linux-x64",
+    "tar": "tar -cvzf conventional-commit-macos-x64.tar.gz ./conventional-commit-node14-macos-x64 && tar -cvzf conventional-commit-linux-x64.tar.gz ./conventional-commit-node14-linux-x64"
+
   },
   "keywords": [],
   "author": "",
@@ -13,11 +19,16 @@
   "devDependencies": {
     "@types/node": "^16.4.10",
     "@types/prompts": "^2.0.14",
+    "pkg": "^5.3.1",
     "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "prompts": "^2.4.1",
     "yargs": "^17.0.1"
+  },
+  "pkg": {
+       "scripts": "build/**/*.js"
   }
+
 }

@@ -74,7 +74,6 @@ const getData = async () => {
   const commitCommand = `git commit -m "${commitMessage}"`;
   const executor: Function = () => {
     exec(commitCommand, async (err, stdout, stderr) => {
-      console.log({ err, stdout, stderr });
       if (err) {
         process.stdout.write(stdout);
         process.stdout.write(
