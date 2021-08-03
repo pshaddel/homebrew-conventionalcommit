@@ -2,8 +2,9 @@ import { commitGenerator } from "./commitGenerator";
 import { commitTypes } from "./static/commitTypes";
 import { gitmojis } from "./static/gotmoji";
 import prompts from "prompts";
+import { exec } from "child_process";
 
-(async () => {
+const getData = async () => {
   const response: Commit = await prompts([
     {
       type: "autocomplete",
@@ -60,5 +61,18 @@ import prompts from "prompts";
     },
   ]);
 
-  console.log(commitGenerator(response));
-})();
+  const commitMessage = commitGenerator(response);
+  const commitCommand = `git commit -m "${commitMessage}"`;
+  exec(commitCommand, (err, stdout, stderr) => {
+    if (err) {
+      process.stdout.write(stdout);
+      process.stdout.write("Your command was:\n" + "\x1b[31m" + commitCommand);
+      process.exit(err.code);
+    } else {
+      process.stdout.write(stdout);
+      process.exit(0);
+    }
+  });
+};
+
+getData();
