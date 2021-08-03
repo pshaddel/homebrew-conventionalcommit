@@ -39,7 +39,7 @@ const getData = async () => {
         message: "Choose a gitmoji",
         choices: gitmojis.map((gitmoj) => {
           return {
-            title: gitmoj.emoji + gitmoj.name,
+            title: gitmoj.name + gitmoj.emoji,
             value: gitmoj.code,
             description: gitmoj.description,
           };
