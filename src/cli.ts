@@ -3,6 +3,7 @@ import { commitTypes } from "./static/commitTypes";
 import { gitmojis } from "./static/gotmoji";
 import prompts from "prompts";
 import { exec } from "child_process";
+import { retry } from "./retry";
 
 const getData = async () => {
   const response: Commit = await prompts([
@@ -63,16 +64,23 @@ const getData = async () => {
 
   const commitMessage = commitGenerator(response);
   const commitCommand = `git commit -m "${commitMessage}"`;
-  exec(commitCommand, (err, stdout, stderr) => {
-    if (err) {
-      process.stdout.write(stdout);
-      process.stdout.write("Your command was:\n" + "\x1b[31m" + commitCommand);
-      process.exit(err.code);
-    } else {
-      process.stdout.write(stdout);
-      process.exit(0);
-    }
-  });
+  const executor: Function = () => {
+    exec(commitCommand, async (err, stdout, stderr) => {
+      if (err) {
+        process.stdout.write(stdout);
+        process.stdout.write(
+          "Your command was:\n" + "\x1b[31m" + commitCommand
+        );
+        const { retryResult } = await retry();
+        if (retryResult) executor();
+        else process.exit(err.code);
+      } else {
+        process.stdout.write(stdout);
+        process.exit(0);
+      }
+    });
+  };
+  executor();
 };
 
 getData();
