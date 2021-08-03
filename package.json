@@ -9,8 +9,8 @@
   "scripts": {
     "start:dev": "tsc-watch --onSuccess 'node ./build/cli.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "pkg . --targets node14-macos-x64 --output conventionalcommit-node14-macos-x64 && pkg . --targets node14-linux-x64 --output conventionalcommit-node14-linux-x64",
-    "tar": "tar -cvzf conventionalcommit-macos-x64.tar.gz ./conventionalcommit-node14-macos-x64 && tar -cvzf conventionalcommit-linux-x64.tar.gz ./conventionalcommit-node14-linux-x64"
+    "package": "pkg . --targets node14-macos-x64 --output conventionalcommit",
+    "tar": "tar -cvzf conventionalcommit-macos-x64.tar.gz ./conventionalcommit"
 
   },
   "keywords": [],
