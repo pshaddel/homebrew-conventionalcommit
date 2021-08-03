@@ -1,6 +1,6 @@
 node_modules
 build
-conventional-commit-linux-x64.tar.gz
-conventional-commit-macos-x64.tar.gz
-conventional-commit-node14-linux-x64
-conventional-commit-node14-macos-x64
+conventionalcommit-linux-x64.tar.gz
+conventionalcommit-macos-x64.tar.gz
+conventionalcommit-node14-linux-x64
+conventionalcommit-node14-macos-x64
