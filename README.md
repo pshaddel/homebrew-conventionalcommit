@@ -9,6 +9,14 @@ After implementing this cli I found out that commitizen has a realy similar cli 
 
 It is working on MacOS right now and I will add Linux file as soon as possible
 
+### Prerequisite
+All you need is Nodejs version  >= 14
+To install Nodejs using brew use this command:
+```bash
+brew install node
+```
+or download from their [website](https://nodejs.org/en/download/).
+
 ### Installation
 Run this command:
 ```bash
