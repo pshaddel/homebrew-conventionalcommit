@@ -23,4 +23,9 @@ Run this command:
 brew install  pshaddel/conventionalcommit/conventionalcommit
 ```
 
-
+### Usage
+You can run cli like this:
+```
+conventionalcommit
+```
+### Contributing
