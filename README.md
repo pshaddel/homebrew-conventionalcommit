@@ -1,4 +1,4 @@
-# conventionalcommit-cli
+# Conventional Commit CLI
 
 This is minimal cli that will help you use conventional commit in your project.
 
